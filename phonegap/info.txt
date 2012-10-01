@@ -1,1 +1,0 @@
-La carpeta contiene todos los avances de la aplicación móvil basada en Phonegap/Cordova
