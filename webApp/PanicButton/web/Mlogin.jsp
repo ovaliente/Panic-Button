@@ -28,7 +28,7 @@
 	<div data-role="header">
 		<h1>Panic Button</h1>
 	</div><!-- /header -->
-<IMG SRC="<%= request.getContextPath() %>/imagenes/redbutton.gif" style="max-width: 100%; padding-left: 5%  " BORDER="0">
+        <P ALIGN="center"><IMG SRC="<%= request.getContextPath() %>/imagenes/botonMovil.gif" style="max-width: 70%; padding-left: 3%; padding-top: 2%  " BORDER="0"></P>
 	  <div data-role="content" data-theme="b">
            
         
