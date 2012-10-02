@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <head> 
+        <title>My Page</title> 
+        <meta name="viewport" content="width=device-width, initial-scale=1"> 
+        <link rel="stylesheet" href="themes/x.min.css" />
+        <link rel="stylesheet" href="http://code.jquery.com/mobile/1.1.1/jquery.mobile-1.1.1.min.css" />
+        <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+        <script src="http://code.jquery.com/mobile/1.1.1/jquery.mobile-1.1.1.min.js"></script>
+        <script> $(function(){
+            $(".img-swap").live('click', function() {
+                if ($(this).attr("class") == "img-swap") {
+                    this.src = this.src.replace("163-glasess-1.png","164-glasess-2.png");
+                } else {
+                    this.src = this.src.replace("164-glasess-2.png","163-glasess-1.png");
+                }
+                $(this).toggleClass("on");
+            });
+        });</script>
+		
+		<script>
+			function prueba()
+			{
+			alert("I am an alert box!");
+			}
+			</script>
+			
+    </head>
+</head>
+<body>
+<div data-role="page" id="index">  
+
+  <div data-role="header">		
+        <h1>Panic Button App</h1>
+
+        <div data-role="navbar">
+            <ul>
+                <li><a href="#Config" data-icon="gear">Configuration</a></li>
+                <li><a href="#Contacts" data-icon="star">Contacts</a></li>
+            </ul>
+        </div><!-- /navbar -->
+        
+    </div>
+	<br>
+	<br>
+	<br>
+	
+	<div id="boton1">
+            <P ALIGN="center">
+            <IMG SRC="C:\Users\Denise\Desktop\2012-2\Aplicaciones Moviles\Lab1\Red_t" 
+			class="img-swap" style="max-width: 100%; padding-left: 5%;  " BORDER="0"
+			onclick="prueba()"
+			></p>
+			<button onclick="prueba()">Prueba</button>
+    </div>
+
+	<div data-role="footer">		
+        <h1>Panic Button App</h1>
+	</div>
+
+</div>
+
+<div data-role="page" id="Config">	
+
+<div data-role="header" data-theme="f">
+            <a href="#index" data-icon="back" data-role="button" data-inline="true">Atrás</a>               
+			<h1>Config</h1>
+            
+</div><!-- /header -->
+		
+		
+		
+		<div data-role="content">
+            <div class="content-primary">
+                <form>
+                    <ul data-role="listview">
+						<br>
+						<br>
+						<br>
+                        <li data-role="fieldcontain">
+                            <label for="slider">Tiempo de envio:</label>
+                            <input type="range" name="slider" id="slider" value="0" min="0" max="60"  />
+                        </li>
+
+                        <li data-role="fieldcontain">
+                            <label for="slider2">Modo de envio:</label>
+                            <select name="slider2" id="slider2" data-role="slider">
+                                <option value="off">Off</option>
+                                <option value="on">On</option>
+                            </select>
+                        </li>
+
+                        <li data-role="fieldcontain">
+                        <div data-role="collapsible" data-iconpos="right">
+							
+							<h3>Login</h3>
+							<form action="#" method="get">
+								<div data-role="fieldcontain">
+									<label for="usuario">Usuario:</label>
+									<textarea cols="40" rows="8" name="usuario" id="usuario"></textarea>
+								</div>
+								<div data-role="fieldcontain">
+									<label for="pass">Contraseña:</label>
+									<input type="password" cols="40" rows="8" name="pass" id="pass"/>
+								</div>
+								<fieldset class="ui-grid-a">
+										<div class="ui-block-a"><button type="submit" data-theme="c">Cancelar</button></div>
+										<div class="ui-block-b"><button type="submit" data-theme="b">Enviar</button></div>	   
+								</fieldset>
+							</form>
+						</div>	
+							
+                        </li>
+		
+						
+
+                        <li class="ui-body ui-body-b">
+                            <fieldset class="ui-grid-a">
+                                <div class="ui-block-a"><button type="submit" data-theme="a">Submit</button></div>
+                            </fieldset>
+                        </li>
+
+                    </ul>
+
+                </form>
+</div>
+</div>
+</div><!-- /page-->
+
+
+<div data-role="page" id="Contacts">	
+
+<div data-role="header" data-theme="f">
+            <a href="#index" data-icon="back" data-role="button" data-inline="true">Atrás</a>               
+			<h1>Contactos</h1>
+            
+</div><!-- /header -->
+
+
+<div data-role="content">
+		<div class="content-primary">	
+			<ul data-role="listview" data-filter="true" data-filter-placeholder="Search people..." data-filter-theme="d"data-theme="d" data-divider-theme="d">
+				<li data-role="list-divider">A</li>
+				<li><a href="index.html">Adam Kinkaid</a></li>
+				<li><a href="index.html">Alex Wickerham</a></li>
+				<li><a href="index.html">Avery Johnson</a></li>
+				<li data-role="list-divider">B</li>
+				<li><a href="index.html">Bob Cabot</a></li>
+				<li data-role="list-divider">C</li>
+				<li><a href="index.html">Caleb Booth</a></li>
+				<li><a href="index.html">Christopher Adams</a></li>
+				<li><a href="index.html">Culver James</a></li>
+				<li data-role="list-divider">D</li>
+				<li><a href="index.html">David Walsh</a></li>
+				<li><a href="index.html">Drake Alfred</a></li>
+				<li data-role="list-divider">E</li>
+				<li><a href="index.html">Elizabeth Bacon</a></li>
+				<li><a href="index.html">Emery Parker</a></li>
+				<li><a href="index.html">Enid Voldon</a></li>
+				<li data-role="list-divider">F</li>
+				<li><a href="index.html">Francis Wall</a></li>
+				<li data-role="list-divider">G</li>
+				<li><a href="index.html">Graham Smith</a></li>
+				<li><a href="index.html">Greta Peete</a></li>
+				<li data-role="list-divider">H</li>
+				<li><a href="index.html">Harvey Walls</a></li>
+				<li data-role="list-divider">M</li>
+				<li><a href="index.html">Mike Farnsworth</a></li>
+				<li><a href="index.html">Murray Vanderbuilt</a></li>
+				<li data-role="list-divider">N</li>
+				<li><a href="index.html">Nathan Williams</a></li>
+				<li data-role="list-divider">P</li>
+				<li><a href="index.html">Paul Baker</a></li>
+				<li><a href="index.html">Pete Mason</a></li>
+				<li data-role="list-divider">R</li>
+				<li><a href="index.html">Rod Tarker</a></li>
+				<li data-role="list-divider">S</li>
+				<li><a href="index.html">Sawyer Wakefield</a></li>
+			</ul>
+
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>
