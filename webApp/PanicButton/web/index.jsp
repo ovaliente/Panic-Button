@@ -76,6 +76,10 @@ document.location = "Mlogin.jsp";
             </div><!-- /content -->
 </div>
 <!-- /page -->
+
+<div data-role="footer" data-inset="true" class="footer-docs" data-theme="a" >	
+            <p>HADEOS  Mobile Apps.</p>                
+        </div><!-- /content --> 
 </div>
     </body>
 </html>
