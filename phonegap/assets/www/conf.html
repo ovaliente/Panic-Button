@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <head> 
+        <title>My Page</title> 
+        <meta name="viewport" content="width=device-width, initial-scale=1"> 
+        <link rel="stylesheet" href="jquery.mobile-1.1.1.min.css" />
+		<script src="jquery-1.8.1.min.js"></script>
+		<script src="jquery.mobile-1.1.1.min.js"></script>
+		<script type="text/javascript" charset="utf-8" src="cordova-2.0.0.js"></script>
+		<script src="js/conf.js"></script>	
+    </head>
+<body>
+
+<div data-role="page" id="Config">	
+
+<div data-role="header" data-theme="f">
+            <a href="index.html" data-icon="back" data-role="button" data-inline="true">Back</a>               
+			<h1>Configuration</h1>
+            
+</div><!-- /header -->
+			
+		<div data-role="content">
+            <div class="content-primary">
+                <form>
+                    <ul data-role="listview">
+						<br>
+                        <li data-role="fieldcontain">
+                            <label for="slider">Tiempo de envio:</label>
+                            <input type="range" name="slider" id="slider" value="0" min="0" max="60"  />
+                        </li>
+                        
+                        <li data-role="fieldcontain">
+                        <div data-role="collapsible" data-iconpos="right">
+							
+							<h3>Login</h3>
+							<form>
+								<div data-role="fieldcontain">
+									<label for="usuario">Usuario:</label>
+									<input type="text" cols="40" rows="8" name="usuario" id="usuario"/>
+								</div>
+								<div data-role="fieldcontain">
+									<label for="pass">Password:</label>
+									<input type="password" cols="40" rows="8" name="pass" id="pass"/>
+								</div>
+							</form>
+						</div>	
+							
+                        </li>		
+
+                        <li class="ui-body ui-body-b">
+                            <fieldset class="ui-grid-a">
+                                <div class="ui-block-a"><button type="button" data-theme="a" onclick="prueba()">Guardar</button></div>
+                            </fieldset>
+                        </li>
+
+                    </ul>
+
+                </form>
+</div>
+</div>
+</div>
+
+</body>
+</html>

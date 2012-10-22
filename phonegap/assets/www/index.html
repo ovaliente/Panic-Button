@@ -1,107 +1,55 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html>
-<head>
-<title>TEL306</title>
-
-<link rel="stylesheet" href="jquery.mobile-1.1.1.min.css" />
-<script src="jquery-1.8.1.min.js"></script>
-<script src="jquery.mobile-1.1.1.min.js"></script>
-
-<script type="text/javascript" charset="utf-8" src="cordova-2.0.0.js"></script>
-<script type="text/javascript">
-
-var listo = false;
-var uuid;
-
-function inicio() {
-	document.addEventListener("deviceready", 
-	onDeviceReady, false);
-}
-
-function onDeviceReady() {
-	//TODO: Lógica de la aplicación
-	navigator.geolocation.getCurrentPosition(onSuccess,onError,{enableHighAccuracy:true});
-
-}
-
-function onSuccess(position){
-	uuid = device.uuid;
-	alert(uuid);
-}
-
-
-
-
-function onError(){
-alert('Error!');
-}
-
-window.onload = inicio;
-
-</script>
-
-<script>
-
-$(document).ready(function(){
-
- $('#pedir').click(function(e){
- //Pedir Taxi
-  
- 
- $.ajax({
- url:'http://localhost:8080/taxi/'+'$(#id).val()'+'/'+'$(#lat).val()'+'/'+'$(#long).val()',
- type:'PUT',
- success: function(data){
- alert('Yeah!');
- } 
- 
- });
- 
- });
- 
- $('#cancelar').click(function(e){
- //Cancelar Taxi
- 
- 
- $.ajax({
- url:'http://localhost:8080/taxi/'+'$(#id).val()',
- type:'DELETE',
- success: function(data){
- alert('Yeah!');
- } 
- 
- });
- 
- });
-
-});
-
-
-</script>
-
-
-
-</head>
+    <head> 
+        <title>My Page</title> 
+        <meta name="viewport" content="width=device-width, initial-scale=1"> 
+        <link rel="stylesheet" href="jquery.mobile-1.1.1.min.css" />
+		<script src="jquery-1.8.1.min.js"></script>
+		<script src="jquery.mobile-1.1.1.min.js"></script>
+		<script type="text/javascript" charset="utf-8" src="cordova-2.0.0.js"></script>
+		<script src="js/main.js"></script>		
+		<script>
+			function prueba()
+			{
+			alert("I am an alert box!");
+			}
+			</script>
+			
+    </head>
 <body>
+<div data-role="page" id="index">  
 
-<div data-role="page">
+  <div data-role="header">		
+        <h1>Panic Button App</h1>
 
-	<div data-role="header">
-		<h1>Examen Parcial</h1>
-	</div><!-- /header -->
-
-	<div data-role="content">
-
-		<img src="images/taxi.jpg" height="100px">
-		<br/>	
-		<a href="#" data-role="button" data-icon="check" data-theme="b" id="pedir" rel="external">Pedir un taxi</a>
-		<a href="#" data-role="button" data-icon="delete" data-theme="c" id="cancelar" rel="external">Cancelar pedido</a>
-	</div><!-- /content -->
+        <div data-role="navbar">
+            <ul>
+                <li><a href="conf.html" data-icon="gear">Configuration</a></li>
+                <li><a href="contacts.html" data-icon="star">Contacts</a></li>
+            </ul>
+        </div><!-- /navbar -->
+        
+    </div>
+	<br>
+	<br>
+	<br>
 	
-	<div data-role="footer">
-		<h4>TEL306</h4>
-	</div><!-- /footer -->
-	
-</div><!-- /page -->
+	<div id="main">
+			<p id="usuario" align="center"></p>
+            <p ALIGN="center">
+            <IMG SRC="images/panicbutton.png" 
+			class="img-swap" BORDER="0"
+			onclick="prueba()"
+			></p>
+    </div>
+
+	<div data-role="footer">		
+        <h1>Panic Button App</h1>
+	</div>
+
+</div>
+
+
+</div>
 </body>
 </html>

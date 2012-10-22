@@ -1,7 +1,6 @@
 package com.example.panicbutton;
 
 import android.os.Bundle;
-import android.app.Activity;
 import org.apache.cordova.*;
 
 public class MainActivity extends DroidGap {
