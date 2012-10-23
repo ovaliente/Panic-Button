@@ -5,16 +5,36 @@
         <meta name="viewport" content="width=device-width, initial-scale=1"> 
         <link rel="stylesheet" href="jquery.mobile-1.1.1.min.css" />
 		<script src="jquery-1.8.1.min.js"></script>
-		<script src="jquery.mobile-1.1.1.min.js"></script>
-		<script src="js/contacts.js"></script>
-		<script type="text/javascript" charset="utf-8" src="cordova-2.0.0.js"></script>
 		<script>
-			function prueba()
-			{
-			alert("I am an alert box!");
-			}
-			</script>
-			
+		$(document).bind("mobileinit", function(){
+			  $.extend(  $.mobile , {
+				ajaxEnabled : false,
+			  });
+			});
+		</script>
+		<script src="jquery.mobile-1.1.1.min.js"></script>
+		<script type="text/javascript" charset="utf-8" src="cordova-2.0.0.js"></script>
+		<script src="js/contacts.js"></script>
+		<script type="text/javascript">
+		//var email;
+		$(document).ready(function() 
+				 {
+				    $('ul.lista li').click(function(e) 
+				    { 
+				     alert($(this).attr('id'));
+				     //email = $(this).attr('id');
+				     //Ejecutamos la función ajax para insertar email de contacto en base de datos externa
+				     //sendContact();
+				    });		    
+				 });
+		
+		//function sendContact(){// 
+			//$.ajax(){ //Método Ajax insertar en DB mediante WS    
+				
+				
+			//}// 
+		//}// 
+		</script>		
     </head>
 <body>
 
@@ -29,8 +49,10 @@
 
 <div data-role="content">
 		<div class="content-primary">	
-			<ul id="lista" data-role="listview" data-filter="true" data-filter-placeholder="Search people..." data-filter-theme="d"data-theme="d" data-divider-theme="d">
-					
+			<ul class ="lista" data-role="listview">
+					<li id="hromaniz@pucp.pe"><a>Haessler</a></li>
+					<li id="hromi@pucp.pe"><a>Haess</a></li>
+					<li id="hroma@pucp.pe"><a>Haer</a></li>
 			</ul>
 
 </div>

@@ -1,3 +1,4 @@
+
 document.addEventListener("deviceready", onDeviceReady, false);
 
 function onDeviceReady() {
@@ -11,10 +12,11 @@ function onDeviceReady() {
 function onSuccess(contacts) {
     for (var i=0; i<contacts.length; i++) {
         	alert('111111111');
-        	var contactmail = contacts[i].emails[i];
+        	var contactmail = contacts[i].emails[0];
         	var contactname = contacts[i].displayName;
-    		$('#lista').append('<li><a onclick="" id="' + contactmail + '">' +
-    				'<p class="line1">' + contactname + '</p></a></li>');
+        	
+        	
+    		$('.lista').append('<li id="'+contactmail+'"><a>' + contactname + '</a></li>');
     		}
     }
 
@@ -22,5 +24,5 @@ function onSuccess(contacts) {
 // onError: Failed to get the contacts
 //
 function onError(contactError) {
-    alert('onError!');
+    alert("onError!");
 }
