@@ -86,7 +86,14 @@ body, div[data-role="page"], div[data-role="content"], .swipeArea {
                 $.mobile.ajaxEnabled = false;
             })
             
-           window.onload = function(){ 
+           window.onload = function(){
+               
+               mapear();
+             setInterval(function(){mapear()},60000);  
+               
+               
+               
+               function mapear(){
             var options = {
         zoom: 6
         , center: new google.maps.LatLng(-12.056595, -77.039452)
@@ -96,11 +103,12 @@ body, div[data-role="page"], div[data-role="content"], .swipeArea {
     };
   
     var map = new google.maps.Map(document.getElementById('map'), options);
-    
-//    var routes = [ //aca se hara un bucle en java para sacar todos los puntos
-//        new google.maps.LatLng(<%=//listabean.getpunto(i)%>)
-//        , new google.maps.LatLng(<%=//listabean.getpunto(i)%>), etc etc
-//   ];
+    //var routes = [];
+ //    for (var i = 0, length = json.length; i < length; i++) {   
+ //         var data = json[i]
+//        routes.push(new google.maps.LatLng(data.lat, data.long));}
+//        
+//        
 // 
 //    var polyline = new google.maps.Polyline({
 //        path: routes
@@ -111,7 +119,7 @@ body, div[data-role="page"], div[data-role="content"], .swipeArea {
 //        , clickable: true
 //    });
     
-           }
+    }}
         </script>
             
     </head>
