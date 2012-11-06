@@ -43,18 +43,29 @@ public class SUsuario extends HttpServlet {
             String pagina = "";
             DRuta druta= new DRuta();
             ArrayList<BRuta> L = new ArrayList<BRuta>();
-            
+            BRuta bruta=new BRuta();
             
             switch (accion) {
-                case 1: //Lista Usuarios
+                case 1: //Lista rutas
                     int idusuario = Integer.parseInt(request.getParameter("data"));
                     L = druta.ListarRuta(idusuario);
                     
                   
-                        request.setAttribute("listausuarios", L);
+                        request.setAttribute("listarutas", L);
                     
 
                     pagina = "/User/rutas.jsp";
+                    break;
+                    
+                    case 2: //Muestra ruta
+                    int idr = Integer.parseInt(request.getParameter("data"));
+                    bruta.setId(idr);
+                    
+                  
+                        request.setAttribute("beanruta", bruta);
+                    
+
+                    pagina = "/User/mapa.jsp";
                     break;
                     
                 case 20://prueba

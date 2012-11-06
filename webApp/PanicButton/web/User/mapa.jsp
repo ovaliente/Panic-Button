@@ -5,6 +5,9 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page import="com.bean.BUsuario,com.bean.BRuta, java.util.ArrayList"%>
+
+<jsp:useBean id="beanruta" type=" BRuta" scope="request" />
 <!DOCTYPE html>
  
 <html>
@@ -107,7 +110,7 @@ body, div[data-role="page"], div[data-role="content"], .swipeArea {
     
     $.ajax({
    
-   url: "http://localhost:8090/aas/webresources/rest/hola/1",
+   url: "http://localhost:8090/aas/webresources/rest/hola/<%=beanruta.getId()%>",
    type: "GET",
    dataType: "json",
    

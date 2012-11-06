@@ -74,7 +74,7 @@
             <ul data-role="listview" data-inset="true" data-divider-theme="a"  >
                 <li data-role="list-divider">Elija una opcion</li>
                 
-                <li><a href="<%=request.getContextPath()%>/User/mapa.jsp" data-transition="slide" data-ajax="false">Ver Historial de Rutas</a></li>
+                <li><a href="<%=request.getContextPath()%>/SUsuario?data=<%=busuario.getId()%>&accion=1" data-transition="slide" data-ajax="false">Ver Historial de Rutas</a></li>
                 <li><a href="<%=request.getContextPath()%>/SUsuario?accion=1" data-transition="slide">Configuracion de Usuario</a></li>
 
             </ul>

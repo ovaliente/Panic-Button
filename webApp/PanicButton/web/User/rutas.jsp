@@ -5,6 +5,9 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page import="com.bean.BUsuario,com.bean.BRuta, java.util.ArrayList"%>
+
+<jsp:useBean id="listarutas" type=" ArrayList<BRuta>" scope="request" />
 <!DOCTYPE html>
 <html>
     <head>
@@ -61,23 +64,36 @@
       <body>
 
      <div data-role="header" data-theme="a" data-position="fixed">
-         <a data-direction="reverse" data-corners="true" data-theme="b" >Atras</a>
+         <a data-direction="reverse" data-corners="true" data-theme="b" href="<%=request.getContextPath()%>/User/index.jsp" data-transition="slide">Atras</a>
             <h1>Panic Button</h1>
             <a href="/PanicButton/index.jsp" data-corners="true" data-theme="b" class="ui-btn-right  ui-btn-corner-all ui-btn-up-a" data-icon="home" data-role="button" data-inline="true"  style="text-align: center;">Salir</a>    
         </div><!-- /header -->
 
         <div data-role="content" data-theme="b" >	
             <div id="contenido1">
-            <ul data-role="listview" data-inset="true" data-divider-theme="a"  >
-                <li data-role="list-divider">Elija una opcion</li>
-                
-                <li><a href="<%=request.getContextPath()%>/SUsuario?accion=1" data-transition="slide">Ruta1</a></li>
-                <li><a href="<%=request.getContextPath()%>/SUsuario?accion=1" data-transition="slide">Ruta2</a></li>
+                            
+                <ul data-role="listview" data-inset="true" data-filter="true" data-divider-theme="b">
+                    <li data-role="list-divider">Historial de Rutas</li>
+                    <% for (BRuta ruta : listarutas) {%>
 
-            </ul>
+                    
+                    <li class="ui-li ui-li-static ui-body-c ui-corner-top" data-inset="true" data-theme="b" data-transition="slide">
+                 
+
+                        <a data-ajax="false" href="<%=request.getContextPath()%>/SUsuario?data=<%=ruta.getId()%>&accion=2" class="ui-link-inherit" data-transition="pop">
+
+                            
+                            <h3 class="ui-li-heading">Ruta <%=ruta.getFecha()%></h3>
+                            
+                            
+
+                        </a>
+                    </li>
+                    <%}%>
+                </ul>
+           
                 <div class=swipeArea>
-                    <div id="browserInfo">
-                    </div>
+                   
                 </div>     
                 
                 </div>
