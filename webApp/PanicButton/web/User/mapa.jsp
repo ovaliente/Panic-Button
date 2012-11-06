@@ -96,14 +96,14 @@ body, div[data-role="page"], div[data-role="content"], .swipeArea {
         , draggingCursor: 'default'
     };
                mapear();
-             setInterval(function(){mapear()},10000);  
+             setInterval(function(){mapear()},60000);  
                
                
                
                function mapear(){
             
-  
-    var map = new google.maps.Map(document.getElementById('map'), options);
+     var map = new google.maps.Map(document.getElementById('map'), options);
+    
     $.ajax({
    
    url: "http://localhost:8090/aas/webresources/rest/hola/oswald",
@@ -111,14 +111,16 @@ body, div[data-role="page"], div[data-role="content"], .swipeArea {
    dataType: "json",
    
    success: function(data){
-    alert(data[0].latitud);
     
-     var routes = [new google.maps.LatLng(data[0].latitud, data[0].longitud)];
-     alert(routes[0]);
+ 
+     var routes = [];
+     
      for (var i = 0, length = data.length; i < length; i++) {   
-     var data = data[i];
-        alert(data.longitud);
-        routes.push(new google.maps.LatLng(data.latitud, data.longitud));}
+     var pos = data[i];
+        
+        routes.push(new google.maps.LatLng(pos.latitud, pos.longitud));
+        
+            }
         
         
  
@@ -130,6 +132,7 @@ body, div[data-role="page"], div[data-role="content"], .swipeArea {
         , strokeOpacity: 0.3
         , clickable: true
     });
+    polyline.setMap(map)
      
    }
  });
