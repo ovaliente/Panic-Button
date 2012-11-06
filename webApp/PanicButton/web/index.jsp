@@ -55,13 +55,12 @@ document.location = "Mlogin.jsp";
                 <ul data-role="listview" data-inset="true" data-divider-theme="a" >
                     <li data-role="list-divider" ><h1>Login </h1></li>
                     <li data-role="fieldcontain" class="ui-hide-label">
-    <label for="nombreusuario">Usuario:</label>
-    <input type="text" name="nombreusuario" id="nombreusuario" value="" placeholder="Usuario" />
+    <label for="username">Username..:</label>
+                            <input type="text" required name="username" id="username" value="" />
 </li>
                     <li data-role="fieldcontain" class="ui-hide-label">
-                        <label for="password">Contraseña:</label>
-                       
-                        <input type="password" name="password" id="password" value="" placeholder="Password"/>
+     <label for="password">Password...:</label>
+                            <input type="password" required name="password" id="password" value="" placeholder="Password"/>
                     </li>
                    
                           

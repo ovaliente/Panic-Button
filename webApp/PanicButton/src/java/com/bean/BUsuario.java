@@ -15,6 +15,7 @@ public class BUsuario {
     private String password;
     private String userhash;
     private String email;
+    private int admin;
 
     /**
      * @return the id
@@ -85,6 +86,22 @@ public class BUsuario {
     public void setEmail(String email) {
         this.email = email;
     }
+
+    /**
+     * @return the admin
+     */
+    public int getAdmin() {
+        return admin;
+    }
+
+    /**
+     * @param admin the admin to set
+     */
+    public void setAdmin(int admin) {
+        this.admin = admin;
+    }
+
+
     
     
     

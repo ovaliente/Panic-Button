@@ -83,6 +83,7 @@ body, div[data-role="page"], div[data-role="content"], .swipeArea {
             </style>
             
             <script type="text/javascript">
+               
             $(document).bind("mobileinit", function() {
                 $.mobile.ajaxEnabled = false;
             })
@@ -106,7 +107,7 @@ body, div[data-role="page"], div[data-role="content"], .swipeArea {
     
     $.ajax({
    
-   url: "http://localhost:8090/aas/webresources/rest/hola/oswald",
+   url: "http://localhost:8090/aas/webresources/rest/hola/1",
    type: "GET",
    dataType: "json",
    
@@ -145,7 +146,7 @@ body, div[data-role="page"], div[data-role="content"], .swipeArea {
             
     </head>
     <body>
-
+        <div data-role="page" id="panic">   
      <div data-role="header" data-theme="a" data-position="fixed">
          <a data-direction="reverse" data-corners="true" data-theme="b" >Atras</a>
             <h1>Panic Button</h1>
@@ -173,6 +174,6 @@ body, div[data-role="page"], div[data-role="content"], .swipeArea {
         <div data-role="footer" data-theme="a" data-position="fixed" >	
             <p>Red Panic Button Web App.</p>                
         </div><!-- /content -->            
-
+        </div>
     </body>
 </html>

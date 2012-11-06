@@ -5,6 +5,9 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page import="com.bean.BUsuario, java.util.ArrayList"%>
+<jsp:useBean id="busuario" type=" BUsuario" scope="request" />
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -61,7 +64,7 @@
   <body>
 
      <div data-role="header" data-theme="a" data-position="fixed">
-         <a data-direction="reverse" data-corners="true" data-theme="b" >Atras</a>
+         
             <h1>Panic Button</h1>
             <a href="/PanicButton/index.jsp" data-corners="true" data-theme="b" class="ui-btn-right  ui-btn-corner-all ui-btn-up-a" data-icon="home" data-role="button" data-inline="true"  style="text-align: center;">Salir</a>    
         </div><!-- /header -->
@@ -71,7 +74,7 @@
             <ul data-role="listview" data-inset="true" data-divider-theme="a"  >
                 <li data-role="list-divider">Elija una opcion</li>
                 
-                <li><a href="<%=request.getContextPath()%>/SUsuario?accion=20" data-transition="slide">Ver Historial de Rutas</a></li>
+                <li><a href="<%=request.getContextPath()%>/User/mapa.jsp" data-transition="slide" data-ajax="false">Ver Historial de Rutas</a></li>
                 <li><a href="<%=request.getContextPath()%>/SUsuario?accion=1" data-transition="slide">Configuracion de Usuario</a></li>
 
             </ul>
