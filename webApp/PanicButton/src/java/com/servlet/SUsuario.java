@@ -9,10 +9,12 @@ import com.dao.DRuta;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import org.apache.catalina.connector.Response;
 
 /**
  *
@@ -55,15 +57,23 @@ public class SUsuario extends HttpServlet {
                     pagina = "/User/rutas.jsp";
                     break;
                     
+                case 20://prueba
+                    
+                    pagina = "/User/mapa.jsp";
                     
             }
             
+            RequestDispatcher rd = getServletContext().getRequestDispatcher(pagina);
+            
+            response.setHeader("Access-Control-Allow-Origin","*");
+            
+            rd.forward(request, response);
             
             
             /* TODO output your page here. You may use following sample code. */
             
-        } finally {            
-            out.close();
+        } catch (Exception ex) {
+            ex.printStackTrace();
         }
     }
 

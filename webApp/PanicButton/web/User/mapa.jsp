@@ -6,8 +6,10 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
+ 
 <html>
     <head>
+        
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         
@@ -47,8 +49,7 @@ padding: 0px;
 width: 100%;
 height: 100%;
 overflow: hidden;
-           box-shadow: 0 0 #3bd425;
-            
+           box-shadow: 0 0 #3bd425;            
             padding-top: 50px;
             float: left;
                 
@@ -87,39 +88,56 @@ body, div[data-role="page"], div[data-role="content"], .swipeArea {
             })
             
            window.onload = function(){
-               
-               mapear();
-             setInterval(function(){mapear()},60000);  
-               
-               
-               
-               function mapear(){
-            var options = {
+               var options = {
         zoom: 6
         , center: new google.maps.LatLng(-12.056595, -77.039452)
         , mapTypeId: google.maps.MapTypeId.ROADMAP
         , draggableCursor: 'default'
         , draggingCursor: 'default'
     };
+               mapear();
+             setInterval(function(){mapear()},10000);  
+               
+               
+               
+               function mapear(){
+            
   
     var map = new google.maps.Map(document.getElementById('map'), options);
-    //var routes = [];
- //    for (var i = 0, length = json.length; i < length; i++) {   
- //         var data = json[i]
-//        routes.push(new google.maps.LatLng(data.lat, data.long));}
-//        
-//        
-// 
-//    var polyline = new google.maps.Polyline({
-//        path: routes
-        
-//        , strokeColor: '#ff0000'
-//        , strokeWeight: 5
-//        , strokeOpacity: 0.3
-//        , clickable: true
-//    });
+    $.ajax({
+   
+   url: "http://localhost:8090/aas/webresources/rest/hola/oswald",
+   type: "GET",
+   dataType: "json",
+   
+   success: function(data){
+    alert(data[0].latitud);
     
-    }}
+     var routes = [new google.maps.LatLng(data[0].latitud, data[0].longitud)];
+     alert(routes[0]);
+     for (var i = 0, length = data.length; i < length; i++) {   
+     var data = data[i];
+        alert(data.longitud);
+        routes.push(new google.maps.LatLng(data.latitud, data.longitud));}
+        
+        
+ 
+    var polyline = new google.maps.Polyline({
+        path: routes
+        
+        , strokeColor: '#ff0000'
+        , strokeWeight: 5
+        , strokeOpacity: 0.3
+        , clickable: true
+    });
+     
+   }
+ });
+    
+   
+    
+    }
+    }
         </script>
             
     </head>
