@@ -151,7 +151,7 @@ body, div[data-role="page"], div[data-role="content"], .swipeArea {
     <body>
         <div data-role="page" id="panic">   
      <div data-role="header" data-theme="a" data-position="fixed">
-         <a data-direction="reverse" data-corners="true" data-theme="b" >Atras</a>
+         <a data-direction="reverse" data-corners="true" data-theme="b" data-rel="back" >Atras</a>
             <h1>Panic Button</h1>
             <a href="/PanicButton/index.jsp" data-corners="true" data-theme="b" class="ui-btn-right  ui-btn-corner-all ui-btn-up-a" data-icon="home" data-role="button" data-inline="true"  style="text-align: center;">Salir</a>    
         </div><!-- /header -->
